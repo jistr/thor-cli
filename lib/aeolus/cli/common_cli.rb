@@ -64,6 +64,7 @@ class Aeolus::Cli::CommonCli < Thor
     end
   end
 
+  # FIXME remove
   def load_aeolus_config(options)
     # set logging defaults
     ActiveResource::Base.logger = Logger.new(STDOUT)
@@ -189,8 +190,7 @@ class Aeolus::Cli::CommonCli < Thor
     deltacloud_driver_to_provider_type
   end
 
-  # TODO: Consider ripping all this file-related stuff into a module or
-  # class for better encapsulation and testability
+  # FIXME remove
   def is_file?(path)
     full_path = File.expand_path(path)
     if File.exist?(full_path) && !File.directory?(full_path)
